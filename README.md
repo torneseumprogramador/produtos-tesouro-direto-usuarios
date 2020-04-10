@@ -3,11 +3,10 @@
 ## Estrutura de dados
 ```
 Tesouro:{
-  nome: "",
-  ir: boolean,
-  pais: "",
-  preoupos: boolean,
-  vencimento: Date,
+  codTesouro: "",
+  codUser: boolean,
+  valorInvest: boolean,
+  dataInvest: Date,
   }
   ```
 ---
