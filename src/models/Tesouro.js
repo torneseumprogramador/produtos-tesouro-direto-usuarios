@@ -26,5 +26,16 @@ const UserTesouroSchema = new mongoose.Schema({
 
 const UserTesouro = mongoose.model('UserTesouro', UserTesouroSchema);
 
+UserTesouro.prototype.comprar = function(){
+  return `Está comprando o tesouro com o código ${this.cod_tesouro}`
+}
+
+UserTesouro.prototype.resgatar = function(){
+  return `Está resgatando o tesouro com o código ${this.cod_tesouro}`
+}
+
+UserTesouro.prototype.devolucao = function(){
+  return `Está recebendo o tesouro com o código ${this.cod_tesouro}`
+}
 
 module.exports = UserTesouro;
