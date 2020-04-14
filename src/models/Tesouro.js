@@ -6,11 +6,11 @@ const UserTesouroSchema = new mongoose.Schema({
     required: true
   },
   cod_user: {
-    type: Boolean,
+    type: String,
     required: true,
   },
   valor_invest: {
-    type: Boolean,
+    type: Number,
     required: true,
   },
   data_invest: {
