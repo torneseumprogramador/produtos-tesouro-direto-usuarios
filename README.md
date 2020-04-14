@@ -4,8 +4,8 @@
 ```
 Tesouro:{
   codTesouro: "",
-  codUser: boolean,
-  valorInvest: boolean,
+  codUser: String,
+  valorInvest: Number,
   dataInvest: Date,
   }
   ```
