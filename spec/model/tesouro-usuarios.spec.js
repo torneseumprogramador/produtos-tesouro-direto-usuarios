@@ -28,6 +28,7 @@ cod_tesouro: {
 
         })
     })
+    
     it('Deveria retornar todos os tesouro-usuarios', async () =>{
         const tesourousuario = await TesouroUsuario.find({})
         expect(tesourousuario).toEqual([])

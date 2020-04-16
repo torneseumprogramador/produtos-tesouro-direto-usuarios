@@ -1,4 +1,4 @@
-const tesouro =  require('../models/Tesouro');
+const Tesouro =  require('../models/Tesouro');
 const TOKEN = "123456"
 
 const TesouroController = {
@@ -33,9 +33,9 @@ const TesouroController = {
   
   create: async (req, res, next) => {
     if(req.headers.token === TOKEN){
-      const {codTesouro, codUser, valorInvest, dataInvest} = req.body
+      const {cod_tesouro, cod_user, valor_invest, data_invest} = req.body
       try {
-        const tesouro =  await Tesouro.create({ codTesouro, codUser, valorInvest, dataInvest});
+        const tesouro =  await Tesouro.create({ cod_tesouro, cod_user, valor_invest, data_invest});
         return res.status(201).send(tesouro)
       } catch (error) {
         return res.status(401).send(error)
@@ -47,8 +47,8 @@ const TesouroController = {
   change: async(req, res, next) => {
     if(req.headers.token === TOKEN){
       try{
-        await Tesouro.findOneAndUpdate({_id: req.params.codTesouro}, { codTesouro: req.body.codTesouro, codUser: req.body.codUser, valorInvest: req.body.valorInvest, dataInvest: req.body.dataInvest})
-        return res.status(204).send(`Alterado com o id ${req.params.codTesouro}`)
+        await Tesouro.findOneAndUpdate({_id: req.params.cod_tesouro}, { cod_tesouro: req.body.cod_tesouro, cod_user: req.body.cod_user, valor_invest: req.body.valor_invest, data_invest: req.body.data_invest})
+        return res.status(204).send(`Alterado com o id ${req.params.cod_tesouro}`)
       }
       catch(err){
         console.log(err)
@@ -61,7 +61,7 @@ const TesouroController = {
   delete: async(req, res, next) => {
     if(req.headers.token === TOKEN){
       try{
-        await Tesouro.findByIdAndDelete(req.params.codTesouro)
+        await Tesouro.findByIdAndDelete(req.params.cod_tesouro)
         return res.status(204).send({});
       }
       catch(err){
